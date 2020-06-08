@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from "./../../shared/http.service";
-
+import { CoutriesService } from "./../../shared/services/coutries.service";
 
 @Component({
   selector: 'app-home',
@@ -9,14 +8,16 @@ import { HttpService } from "./../../shared/http.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http: HttpService) { }
+  constructor( private countries: CoutriesService) { }
 
-  ngOnInit() {
-    this.http.getData().subscribe(res =>{
-      console.log(res);
-    })
+  ngOnInit() { 
+    this.getCountries();
   }
 
+  getCountries(){
+      this.countries.getCountryData();
+  }
+  
   elements: any = [
     {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
     {id: 2, first: 'Jacob', last: 'Thornton', handle: '@fat'},

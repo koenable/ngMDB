@@ -11,10 +11,12 @@ export class HttpService{
   constructor(private http: HttpClient) { }
   
 
-  getData(){
-    return this.http.get('https://restcountries.eu/rest/v2/all');
+  getData(url){
+    return this.http.get(url);
   };
 
- 
+  // getData(){
+  //   return this.http.get('https://restcountries.eu/rest/v2/all');
+  // };
 
 }
