@@ -11,15 +11,20 @@
               <table mdbTable>
                 <thead class="black white-text">
                   <tr>
-                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                    <th>Country</th>
+                    <th>Native Name</th>
+                    <th>Region</th>
+                    <th>Capital</th>
+                    <th>Sub-Region </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr mdbTableCol *ngFor="let el of elements">
-                    <th scope="row">{{el.id}}</th>
-                    <td>{{el.first}}</td>
-                    <td>{{el.last}}</td>
-                    <td>{{el.handle}}</td>
+                  <tr mdbTableCol *ngFor="let el of countries">
+                    <th scope="row">{{el.name}}</th>
+                    <td>{{el.nativeName}}</td>
+                    <td>{{el.region}}</td>
+                    <td>{{el.capital}}</td>
+                    <td>{{el.subregion}}</td>
                   </tr>
                 </tbody>
               </table>
