@@ -10,27 +10,26 @@ export class CoutriesService {
 
   ngOnInit() {
   }
-  
-  Countries: any;
 
 
-  //
+
   getCountryData() {
-    let url =  'https://restcountries.eu/rest/v2/all';
-    this.http.getData(url).subscribe(res => {
-      this.Countries = res;
-      this.saveCountrydata(this.Countries);    
-    })
-  }
-
-  saveCountrydata(data){
-    if(localStorage.getItem("Countries")){
-      console.log("Countries Not set");
+    let countries = localStorage.getItem('Countries')
+    if (countries == null) {
+      console.log("Countries Not set.Fetching data");
+      let url = 'https://restcountries.eu/rest/v2/all';
+      this.http.getData(url).subscribe(res => {
+        localStorage.setItem('Countries', JSON.stringify(res));
+        console.log("Saved data");
+      })
     }
-    else{
-      localStorage.setItem('Countries', JSON.stringify(data))
-       console.log("Countries Are set")
-      }  
+    else {
+      return;
+      // this.assignData();
+    }
 
   }
+
+
+  
 }

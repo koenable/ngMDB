@@ -8,15 +8,28 @@ import { CoutriesService } from "./../../shared/services/coutries.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private countries: CoutriesService) { }
+  constructor( private countrServ: CoutriesService) { }
 
   ngOnInit() { 
-    this.getCountries();
+    this.countrServ.getCountryData();
   }
 
-  getCountries(){
-      this.countries.getCountryData();
-  }
+  ngAfterViewChecked(){
+    this.getCountries();
+  }   
+
+  countries: any;
+
+
+  //fetch countries data from local storage
+  getCountries(){   
+      this.countries = JSON.parse(localStorage.getItem('Countries'));
+      JSON.parse(localStorage.getItem('Countries')).forEach(el => {
+          this.countries = el;
+          console.log(el.name);
+      });
+  };
+
   
   elements: any = [
     {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
