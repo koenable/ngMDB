@@ -1,52 +1,46 @@
-    <!--Main Layout-->
-    <main class="text-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 >
-                All Contries
-              </h2>
+<div class="jumbotron">
+  <div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="display-4">Hello, world!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</p>
+    </div>
+    <div class="col-6">
+
+      <mdb-card>
+        <mdb-card-body>
+          <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <div class="form-group">
+              <label for="name">Email</label>
+              <input type="text" class="form-control" id="name"
+                     required
+                     [(ngModel)]="model.name" name="name"
+                     #name="ngModel">
+              <div [hidden]="name.valid || name.pristine"
+                   class="alert alert-danger">
+               Email is required
+              </div>
             </div>
-            <div class="col-md-12">
-              <table mdbTable>
-                <thead class="black white-text">
-                  <tr>
-                    <th>Country</th>
-                    <th>Native Name</th>
-                    <th>Region</th>
-                    <th>Capital</th>
-                    <th>Sub-Region </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr mdbTableCol *ngFor="let el of countries">
-                    <th scope="row">{{el.name}}</th>
-                    <td>{{el.nativeName}}</td>
-                    <td>{{el.region}}</td>
-                    <td>{{el.capital}}</td>
-                    <td>{{el.subregion}}</td>
-                  </tr>
-                </tbody>
-              </table>
-              
-              <table mdbTable>
-                <thead class="grey lighten-1 black-text">
-                  <tr>
-                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr mdbTableCol *ngFor="let el of elements">
-                    <th scope="row">{{el.id}}</th>
-                    <td>{{el.first}}</td>
-                    <td>{{el.last}}</td>
-                    <td>{{el.handle}}</td>
-                  </tr>
-                </tbody>
-              </table>
+      
+            <div class="form-group">
+              <label for="alterEgo">Password</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              id="password"
+              [(ngModel)]="login.isUser
+              ">
             </div>
-          </div>
-        </div>
-    
-      </main>
-      <!--Main Layout-->
+
+      
+            <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+            <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">Sign Up</button>
+
+          </form>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>
+</div>

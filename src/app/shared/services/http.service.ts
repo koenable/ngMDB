@@ -10,10 +10,17 @@ export class HttpService{
   
   constructor(private http: HttpClient) { }
   
-
+  // fetch data
   getData(url){
     return this.http.get(url);
   };
+
+  //post data
+  postdata(url,data){
+    return this.http.post(url,data)
+  }
+
+
 
   // getData(){
   //   return this.http.get('https://restcountries.eu/rest/v2/all');

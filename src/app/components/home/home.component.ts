@@ -1,5 +1,5 @@
+import { User } from './../../shared/models/user';
 import { Component, OnInit } from '@angular/core';
-import { CoutriesService } from "./../../shared/services/coutries.service";
 
 @Component({
   selector: 'app-home',
@@ -8,27 +8,22 @@ import { CoutriesService } from "./../../shared/services/coutries.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private countrServ: CoutriesService) { }
+ constructor(){}
 
   ngOnInit() { 
-    this.countrServ.getCountryData();
+    // this.countrServ.getCountryData();
   }
 
-  ngAfterViewChecked(){
-    this.getCountries();
-  }   
 
-  countries: any;
+  model = new User('Json','json@work','nonOfYourBuz');
 
+  submitted = false;
 
-  //fetch countries data from local storage
-  getCountries(){   
-      this.countries = JSON.parse(localStorage.getItem('Countries'));
-      JSON.parse(localStorage.getItem('Countries')).forEach(el => {
-          console.log(el);
-      });
-  };
+  onSubmit() { this.submitted = true; }
 
+  newHero() {
+    this.model = new User('', '', '');
+  }
   
  
 }
