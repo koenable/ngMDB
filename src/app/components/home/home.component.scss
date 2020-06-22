@@ -1,6 +1,18 @@
-.logo_body{
-    width:auto;
-    height:35em;
+.container{
+
+  .main_row{
+    padding-top: 12em;
+
+    .lead{
+      font-size: 1.8em; 
+    }
+
+    .links{
+      font-size: 1.4em;
+      color: rgb(187, 119, 130);
+    }
+  }
+
 }
 
 .ng-valid[required], .ng-valid.required  {
@@ -12,12 +24,8 @@
   }
 
 
- .tips{
-  //  list-style: ;
-   text-decoration:none ;
+.logo{
+  font-size: 12em;
+  // align:? center;
 
-   li{
-      font-weight: 400;
-      font-size: 1em;
-    }
- } 
+}

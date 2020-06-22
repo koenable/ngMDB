@@ -1,54 +1,59 @@
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="display-4">Stop the violence</h1>
-      </div>
-    </div> 
-  <div class="row">
-    <div class="col-6">
-        <p class="lead">
-          A platform to voice out and share your experiences on gender based violence 
-        </p>
-        <hr>
-        <u class="tips">
-          <li *ngFor="let tip of tips">
-            {{ tip }}
-          </li>
-        </u>
-      </div>
-      <div class="col-6">
-        <mdb-card>
-          <mdb-card-body>
-            <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
-
-              <div class="form-group">
-
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" required [(ngModel)]="model.email" name="email"
-                  #email="ngModel">
-                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-                  Enter email
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="alterEgo">Password</label>
-                <input type="text" name="password" id="password" #password="ngModel" [(ngModel)]="model.password"
-                  class="form-control" required>
-                <div [hidden]="password.valid || password.pristine " class="alert alert-danger">
-                  Insert password
-                </div>
-              </div>
 
 
-              <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Log in</button>
-              <button type="button" class="btn btn-default" (click)="loginForm.reset()">Register</button>
-
-            </form>
-          </mdb-card-body>
-        </mdb-card>
-      </div>
+<div class="container">
+  <div class="row main_row">
+    <div class="col-lg-6 text-center col-sm-12 col-xs-12">
+      <h1 class="logo">
+        STV
+      </h1>
     </div>
+    <div class="col-lg-6  col-sm-12 col-xs-12">
+      <h1 @slideDown class="display-4">Stop the violence</h1>
+      <hr>
+      <p @slideUp class="lead">
+        A platform to voice out and share your experiences on gender based violence
+      </p>
+
+      <a @slideUp routerLink="/community" href="" class="links">
+      <mdb-icon fas icon="users" size="lg"></mdb-icon>
+      Community</a> <br>
+
+      <a @slideUp routerLink="/community" href="" class="links">
+        <mdb-icon fas icon="shield-alt" size="lg"></mdb-icon>
+        Login
+      </a>
+    </div>
+    <!-- <div class="col-lg-6 col-sm-12 col-xs-12">
+      <mdb-card>
+        <mdb-card-body>
+          <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+
+            <div class="form-group">
+
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" required [(ngModel)]="model.email" name="email"
+                #email="ngModel">
+              <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Enter email
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="alterEgo">Password</label>
+              <input type="text" name="password" id="password" #password="ngModel" [(ngModel)]="model.password"
+                class="form-control" required>
+              <div [hidden]="password.valid || password.pristine " class="alert alert-danger">
+                Insert password
+              </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Log in</button>
+            <button type="button" class="btn btn-default" (click)="loginForm.reset()">Register</button>
+
+          </form>
+        </mdb-card-body>
+      </mdb-card>
+    </div> -->
   </div>
 </div>
