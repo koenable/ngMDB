@@ -1,75 +1,49 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-lighten red lighten-5" [containerInside]="true">
-
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">
-      STV
-  </a></mdb-navbar-brand>
-
-  <!-- Collapsible content -->
-  <links>
-
-    <!-- Links -->
-    <!-- <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
-      </li>
- 
-    </ul> -->
-    <!-- Links -->
-
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item avatar dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          Logged In 
-      </a>
-        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-          <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a> -->
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
-        </div>
-      </li>
-    </ul>
-  </links>
-  <!-- Collapsible content -->
-
-</mdb-navbar>
-<!--/.Navbar-->
 
 
 
 
-
-
-<button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
-        (click)="frame.show()" mdbWavesEffect>Launch Modal
-</button>
-
-<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
-    <!--Content-->
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-
-      <!--Header-->
-      <div class="modal-header">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="avatar"
-             class="rounded-circle img-responsive">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <!--Body-->
-      <div class="modal-body mb-1">
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
 
-        <h5 class="mt-1 mb-2 text-center">Maria Doe</h5>
-
-  
-
-        <div class="text-center mt-4">
-          <button mdbBtn color="cyan" rounded="true" class="mt-1 waves-light" mdbWavesEffect>Login
-            <mdb-icon fas icon="sign-in-alt" class="ml-1"></mdb-icon>
-          </button>
+          <label for="defaultForm-email">Your email</label>
+          <mdb-error
+            *ngIf="loginFormModalEmail.invalid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="loginFormModalEmail.valid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">Input
+            valid
+          </mdb-success>
         </div>
-      </div>
 
+        <div class="md-form mb-4">
+          <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+           <label for="defaultForm-pass">Your password</label>
+          <mdb-error
+            *ngIf="loginFormModalPassword.invalid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="loginFormModalPassword.valid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+            Input valid
+          </mdb-success>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="default" class="waves-light" mdbWavesEffect>Login</button>
+      </div>
     </div>
-    <!--/.Content-->
   </div>
 </div>

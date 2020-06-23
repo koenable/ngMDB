@@ -10,6 +10,7 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -44,24 +45,25 @@ export class HomeComponent implements OnInit {
  
   }
 
-  // tips = [1,2,3,4]
-  tips = [
-    "Settle arguments with words, not fists or weapons",
-    "Learn safe routes for walking in the neighborhood, and know good places to seek help",
-    "Report any crimes or suspicious actions to the police, school authorities, and parents",
-    "Don't open the door to anyone you and your parents don't know and trust."]
-
   model = new User('','');
 
-  submitted = false;
+  // response data
+  loginRes;
 
-  // When user clicks the login button
+  // When user clicks the login 
+  // user the auth service to make a post request    
   onSubmit(form:NgForm){
       this.model = new User(form.value.email, form.value.password);
-      // user the auth service to make a post request    
-      this.authServ.login(this.model)
+      // this.authServ.login(this.model)
+      this.authServ.login(this.model).subscribe(res=>{
+          if(res) { console.log(res)};
+      })
     }
 
+  // reset form
+  resetForm(form:NgForm){
+      form.reset();
+  }
 
   
  

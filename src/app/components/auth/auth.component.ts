@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { Component, OnInit,Input } from '@angular/core';
 
 
 @Component({
@@ -8,16 +7,11 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  validatingForm: FormGroup;
+  @Input() auth;
 
   ngOnInit() {
-    this.validatingForm = new FormGroup({
-      modalFormAvatarPassword: new FormControl('', Validators.required)
-    });
   }
 
-  get modalFormAvatarPassword() {
-    return this.validatingForm.get('modalFormAvatarPassword');
-  }
+ 
 
 }
