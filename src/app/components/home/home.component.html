@@ -1,9 +1,54 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-lighten pink   lighten-5" [containerInside]="true">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand>
+    <a class="navbar-brand" style="  color: #880e4f ;" href="#">
+      STV
+    </a>
+  </mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="users"></mdb-icon> Community
+        </a>
+      </li>
+
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="user-nurse"></mdb-icon> Profile<span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Login</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Register</a>
+        </div>
+      </li>
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->
+
+
+
+
+
+
+
 
 
 <div class="container">
   <div class="row main_row">
     <div class="col-lg-6 text-center col-sm-12 col-xs-12">
-      <h1 class="logo">
+      <h1 class="logo ">
         STV
       </h1>
     </div>
@@ -15,13 +60,14 @@
       </p>
 
       <a @slideUp routerLink="/community" href="" class="links">
-      <mdb-icon fas icon="users" size="lg"></mdb-icon>
-      Community</a> <br>
+        <mdb-icon fas icon="users" size="lg"></mdb-icon>
+        Community
+      </a> <br>
 
-      <a @slideUp routerLink="/community" href="" class="links">
+      <!-- <a @slideUp routerLink="/community" href="" class="links">
         <mdb-icon fas icon="shield-alt" size="lg"></mdb-icon>
         Login
-      </a>
+      </a> -->
     </div>
     <!-- <div class="col-lg-6 col-sm-12 col-xs-12">
       <mdb-card>

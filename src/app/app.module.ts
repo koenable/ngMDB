@@ -12,13 +12,15 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { CommunityComponent } from './components/community/community.component';
 // MDB Angular Free
-import { IconsModule } from 'angular-bootstrap-md'
+import { IconsModule } from 'angular-bootstrap-md';
+import { AuthComponent } from './components/auth/auth.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CommunityComponent
+    CommunityComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
