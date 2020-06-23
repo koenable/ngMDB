@@ -1,0 +1,42 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-lighten pink lighten-5" [containerInside]="true">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+      <a class="navbar-brand" style="  color: #880e4f ;" href="#">
+        STV
+      </a>
+    </mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <!-- Dropdown -->
+        <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="user-nurse"></mdb-icon> Profile<span class="caret"></span>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+      <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
+  </mdb-navbar>
+  <!--/.Navbar-->
+  
+
+
+  <div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+          featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a mdbBtn color="primary" size="lg" href="#" role="button" mdbWavesEffect>Learn more</a>
+      </div>
+  </div>

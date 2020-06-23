@@ -110,8 +110,9 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+
       <div class="modal-body mx-3">
-        <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
@@ -132,14 +133,17 @@
             </div>
           </div>
 
-        </form>
       </div>
 
       <div class="modal-footer d-flex justify-content-center">
         <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid" mdbBtn color="default" class="waves-light" mdbWavesEffect>Login</button>   
-        <button mdbBtn color="red" class="waves-light"  (click)="frame.hide(); resetForm.reset()" mdbWavesEffect>Cancel</button>
+        <button mdbBtn color="red" class="waves-light"  (click)="frame.hide(); resetForm()" mdbWavesEffect>Cancel</button>
       </div>
-    
+
+    </form>
+
     </div>
   </div>
 </div>
+
+
